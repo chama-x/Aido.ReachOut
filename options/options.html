@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Business Scraper - Options</title>
+    <link rel="stylesheet" href="../styles/options.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Google Maps Business Scraper</h1>
+            <p class="subtitle">Settings and Configuration</p>
+        </header>
+
+        <main>
+            <section class="settings-section">
+                <h2>Extraction Settings</h2>
+                <div class="form-group">
+                    <label for="max-businesses">Maximum businesses to extract</label>
+                    <input type="number" id="max-businesses" class="form-control" min="1" max="500" value="100">
+                    <p class="help-text">Higher values may increase extraction time</p>
+                </div>
+                <div class="form-group">
+                    <label for="scroll-delay">Scroll delay (milliseconds)</label>
+                    <input type="number" id="scroll-delay" class="form-control" min="300" max="2000" value="500">
+                    <p class="help-text">Delay between scrolls when loading more results</p>
+                </div>
+                <div class="form-group">
+                    <label for="max-scroll-attempts">Maximum scroll attempts</label>
+                    <input type="number" id="max-scroll-attempts" class="form-control" min="5" max="50" value="20">
+                    <p class="help-text">Maximum number of times to scroll for more results</p>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="extract-details" checked>
+                    <label for="extract-details">Extract business details</label>
+                    <p class="help-text">Click on each business to extract detailed information</p>
+                </div>
+            </section>
+
+            <section class="settings-section">
+                <h2>Phone Number Validation</h2>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="validate-sl-numbers" checked>
+                    <label for="validate-sl-numbers">Validate Sri Lankan numbers</label>
+                    <p class="help-text">Validate and format phone numbers according to Sri Lankan standards</p>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="convert-international" checked>
+                    <label for="convert-international">Convert to international format</label>
+                    <p class="help-text">Convert local numbers to international format (+94)</p>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="include-local-format" checked>
+                    <label for="include-local-format">Include local format</label>
+                    <p class="help-text">Include local format (0XX) alongside international format</p>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="identify-number-type" checked>
+                    <label for="identify-number-type">Identify number type</label>
+                    <p class="help-text">Identify if number is mobile or landline and associated region</p>
+                </div>
+            </section>
+
+            <section class="settings-section">
+                <h2>Sri Lanka Location Templates</h2>
+                <div class="location-templates">
+                    <div class="template-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="new-location" class="form-control" placeholder="Location name">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" id="new-radius" class="form-control" placeholder="Radius (km)" min="1" max="50" value="5">
+                            </div>
+                            <button id="add-location" class="btn btn-secondary">Add</button>
+                        </div>
+                    </div>
+                    <div class="saved-locations">
+                        <h3>Saved Locations</h3>
+                        <div id="locations-list" class="locations-list">
+                            <!-- Locations will be added here dynamically -->
+                            <div class="empty-message">No saved locations</div>
+                        </div>
+                    </div>
+                </section>
+
+            <section class="settings-section">
+                <h2>Export Settings</h2>
+                <div class="form-group">
+                    <label>Default export format</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="format-csv" name="default-format" value="csv">
+                            <label for="format-csv">CSV</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="format-json" name="default-format" value="json" checked>
+                            <label for="format-json">JSON</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="include-headers" checked>
+                    <label for="include-headers">Include headers in CSV</label>
+                </div>
+                <div class="form-group">
+                    <label for="filename-template">File name template</label>
+                    <input type="text" id="filename-template" class="form-control" value="sri_lanka_businesses_{date}">
+                    <p class="help-text">Use {date} for current date, {location} for location name</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="button-row">
+                <button id="save-settings" class="btn btn-primary">Save Settings</button>
+                <button id="reset-settings" class="btn btn-secondary">Reset to Default</button>
+            </div>
+            <div id="status-message" class="status-message"></div>
+        </footer>
+    </div>
+
+    <script src="../scripts/options.js"></script>
+</body>
+</html>

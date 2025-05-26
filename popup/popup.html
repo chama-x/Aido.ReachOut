@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Business Scraper</title>
+    <link rel="stylesheet" href="../styles/popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Google Maps Business Scraper</h1>
+            <p class="subtitle">Extract business names and phone numbers in Sri Lanka</p>
+        </header>
+
+        <section class="search-config">
+            <h2>Search Configuration</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <select id="location" class="form-control">
+                        <option value="Colombo">Colombo</option>
+                        <option value="Kandy">Kandy</option>
+                        <option value="Galle">Galle</option>
+                        <option value="Jaffna">Jaffna</option>
+                        <option value="Batticaloa">Batticaloa</option>
+                        <option value="Negombo">Negombo</option>
+                        <option value="Trincomalee">Trincomalee</option>
+                        <option value="Anuradhapura">Anuradhapura</option>
+                        <option value="custom">Custom Location...</option>
+                    </select>
+                    <input type="text" id="custom-location" class="form-control" placeholder="Enter location" style="display: none;">
+                </div>
+                <div class="form-group">
+                    <label for="radius">Radius (km)</label>
+                    <select id="radius" class="form-control">
+                        <option value="1">1 km</option>
+                        <option value="2">2 km</option>
+                        <option value="3">3 km</option>
+                        <option value="5" selected>5 km</option>
+                        <option value="10">10 km</option>
+                        <option value="20">20 km</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="query">Search Query</label>
+                <input type="text" id="query" class="form-control" placeholder="e.g., restaurants, hotels, banks">
+            </div>
+        </section>
+
+        <section class="extraction-actions">
+            <h2>Extraction Actions</h2>
+            <div class="button-row">
+                <button id="extract-current-view" class="btn btn-primary">Extract from Current View</button>
+                <button id="search-and-extract" class="btn btn-secondary">Search and Extract</button>
+            </div>
+        </section>
+
+        <section class="results" id="results-section">
+            <h2>Results</h2>
+            <div class="results-summary">
+                <div class="result-stat">
+                    <span class="stat-label">Businesses:</span>
+                    <span class="stat-value" id="business-count">0</span>
+                </div>
+                <div class="result-stat">
+                    <span class="stat-label">Phone Numbers:</span>
+                    <span class="stat-value" id="phone-count">0</span>
+                </div>
+            </div>
+            <div class="results-preview" id="results-preview">
+                <p class="no-results">No results yet</p>
+            </div>
+        </section>
+
+        <section class="export-options">
+            <h2>Export Options</h2>
+            <div class="button-row">
+                <button id="export-csv" class="btn btn-export" disabled>CSV</button>
+                <button id="export-json" class="btn btn-export" disabled>JSON</button>
+                <button id="copy-results" class="btn btn-export" disabled>Copy</button>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="#" id="open-settings">Settings</a>
+                <a href="#" id="open-help">Help</a>
+            </div>
+            <div class="status" id="status-message"></div>
+        </footer>
+    </div>
+
+    <script src="../scripts/popup.js"></script>
+</body>
+</html>
