@@ -1,0 +1,8 @@
+README.md
+setup.py
+google_maps_scraper.egg-info/PKG-INFO
+google_maps_scraper.egg-info/SOURCES.txt
+google_maps_scraper.egg-info/dependency_links.txt
+google_maps_scraper.egg-info/entry_points.txt
+google_maps_scraper.egg-info/requires.txt
+google_maps_scraper.egg-info/top_level.txt

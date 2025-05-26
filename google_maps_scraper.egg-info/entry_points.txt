@@ -1,0 +1,2 @@
+[console_scripts]
+google-maps-scraper = google_maps_scraper.src.main:main

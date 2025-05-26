@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: google_maps_scraper
+Version: 1.0.0
+Summary: A robust Google Maps business scraper for extracting business names and phone numbers in Sri Lanka
+Author: Manus AI
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Requires-Dist: playwright>=1.40.0
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: httpx>=0.24.0
+Dynamic: author
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
